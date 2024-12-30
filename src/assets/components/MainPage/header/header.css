@@ -1,0 +1,14 @@
+
+h1 {
+    font-family: Barlow;
+}
+.fırsat {
+    font-family: Satisfy;
+}
+
+header {
+    background-image: url(../../../../../images/iteration-1-images/home-banner.png);
+    background-size: cover;
+    border-bottom: 1px solid #e9ecef;
+    width: 100%;
+}
