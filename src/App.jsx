@@ -1,29 +1,66 @@
-import { useState } from 'react'
-import { Link, Switch, Route } from 'react-router-dom';
-import Home from './assets/components/MainPage/Home.jsx'
-import Siparis from './assets/components/Siparis/Siparis'
-import Onay from './assets/components/Onay/Onay'
-import "./App.css"
-
+import { useState } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import Home from './assets/components/MainPage/Home.jsx';
+import Siparis from './assets/components/Siparis/Siparis';
+import Onay from './assets/components/Onay/Onay';
+import notFound from './assets/components/notFound/notFound.jsx';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedToppings, setSelectedToppings] = useState([]);
+  const [count, setCount] = useState(1);
+  const [size, setSize] = useState('');
+  const [name, setName] = useState('');
+  const basePrice = 80;
+  const toppingPrice = 5;
+
+  const handleToppingChange = (event) => {
+    const value = event.target.value;
+    if (event.target.checked) {
+      setSelectedToppings([...selectedToppings, value]);
+    } else {
+      setSelectedToppings(selectedToppings.filter((topping) => topping !== value));
+    }
+  };
+
+  const calculatePrice = () => {
+    return basePrice + selectedToppings.length * toppingPrice * count;
+  };
+
+  const orderDetails = {
+    name,
+    size,
+    toppings: selectedToppings,
+    count,
+    price: calculatePrice(),
+  };
 
   return (
-    <>
-    <nav>
-      <Link to="/home">Home</Link>
-      <Link to="/siparis">Siparis</Link>
-      <Link to="/onay">Onay</Link>
-    </nav>
     <Switch>
-        <Route path="/home" component={Home} />
-        <Route path="/siparis" component={Siparis}/>
-        <Route path="/onay" component={Onay} />
-        <Route path="*" component={Error}/>    
+      <Route exact path="/" component={Home} />
+      <Route
+        path="/siparis"
+        render={() => (
+          <Siparis
+            selectedToppings={selectedToppings}
+            setSelectedToppings={setSelectedToppings}
+            count={count}
+            setCount={setCount}
+            basePrice={basePrice}
+            toppingPrice={toppingPrice}
+            handleToppingChange={handleToppingChange}
+            setSize={setSize}
+            setName={setName}
+          />
+        )}
+      />
+      <Route
+        path="/onay"
+        render={() => <Onay orderDetails={orderDetails} />}
+      />
+      <Route path="*" component={notFound} />
     </Switch>
-        </>
-  )
+  );
 }
 
-export default App
+export default App;

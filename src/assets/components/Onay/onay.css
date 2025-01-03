@@ -1,0 +1,24 @@
+.onay{
+    background-color: var(--kirmizi);
+    color: var(--bej);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.sipBaslik {
+    font-size: 2vw;
+    color: var(--bej);
+    background-color: var(--kirmizi);
+    height: 20vh;
+    margin-bottom: 15vh;
+
+}
+.onay p {
+    font-size: 4vw;
+    margin-top: 0vh;
+    font-family: Roboto Condensed;
+
+}

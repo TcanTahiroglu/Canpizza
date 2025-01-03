@@ -1,0 +1,45 @@
+.sipBaslik {
+font-size: 2vw;
+color: var(--bej);
+background-color: var(--kirmizi);
+height: 20vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.aciklama {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+.urun{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.urun-fiyat {
+    margin-right: 23%;
+}
+.boyutlar {
+    margin: 0 35% 0 35%;
+}
+.urun-secenekler {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+
+}
+.radio {
+   display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+.radio-baslik {
+    font-weight: bold;
+}

@@ -4,6 +4,7 @@ import Header from "./header/header";
 import Navbar from "./nav/navbar";
 import Product from "./product/product";
 import Promo from "./promo/promo";
+import "../MainPage/Home.css";
 
 export default function Home() {
   

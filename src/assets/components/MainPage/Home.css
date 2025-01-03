@@ -1,0 +1,31 @@
+.baslik {
+    font-size: 2vw;
+    font-weight: bold;
+    margin-bottom: 5rem;
+    margin-top: 3rem;
+    color: var(--bej);
+    font-family: Barlow Semi Condensed;
+
+}
+.hero {
+    background:url(../../../../images/iteration-1-images/home-banner.png) no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--bej);
+    text-align: center;
+    width: 99.1vw;
+    height: 90vh;
+}
+.banner p {
+    font-family: Roboto Condensed;
+    font-size: 4rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: var(--bej);
+}
+.banner {
+    margin-bottom: 3rem;
+padding: 0rem;
+}
